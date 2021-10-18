@@ -16,7 +16,7 @@
     },
     {
     "data": {
-    "url": "data/weatherAUS.csv"
+    "url": "weatherAUS.csv"
     },
     "mark": {"type": "circle", "tooltip": {"content": "data"}},
     "encoding": {
