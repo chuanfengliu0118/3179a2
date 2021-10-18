@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 500,
+    "data": {"url":"data/weatherAUS.csv"},
+    "params": [
+        {
+        "name": "Location_selection",
+        "bind": {
+        "input": "select",
+        "options": [
+        null,
+        "Adelaide",
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Perth"
+        
+        ],
+        "labels":[
+        "Show All",
+        "Adelaide",
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Perth"
+        ],
+        "name": "Location Selection: "
+        }
+        }
+        ],
+        "transform": [
+          {"filter": "Location_selection == null || datum.Location == Location_selection"}
+         
+        ],
+        
+    "encoding": {
+      "x": {"field": "Date", "type": "temporal"}
+    },
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "y": {"field": "MinTemp", "type": "quantitative"},
+          "color": {"field": "Location", "type": "nominal"}
+        }
+      }
+     
+      
+    ]
+    
+   
+  }

@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Rainfall",
+    "data": {
+    "url": "data/weatherAUS.csv"
+    },
+    "selection": {
+        "location_highlight": {
+        "type": "multi",
+        "fields": ["Location"],
+        "bind": "legend"
+        }
+        },
+    "mark": "circle",
+    "encoding": {
+    "x": {
+    "field": "MinTemp",
+    "type": "quantitative",
+    "title": "MinTemp"
+    
+    },
+    "y": {
+    "field": "Rainfall",
+    "type": "quantitative"
+    },
+    "color": {
+    "field": "Location",
+    "type": "nominal"
+    
+    },
+    "opacity": {
+        "condition": {"selection": "location_highlight", "value": 0.6},
+        "value": 0.2
+        
+    
+    },
+    "tooltip": [
+        {"field": "Location", "type": "nominal"},
+        {"field": "MinTEmp", "type": "quantitative", "format": ","},
+        {"field": "Rainfall", "type": "quantitative", "format": ","}
+        ]
+       
+}
+   }
+   

@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 500,
+    "title": "Rainfall map in AUS",
+    "projection": {"type": "equalEarth"},
+    "layer": [
+    {
+    "data": {
+    "url":
+   "aus.json"
+   ,
+    "format": {"type": "topojson", "feature": "custom.geo"}
+    },
+    "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+    "data": {
+    "url": "data/weatherAUS.csv"
+    },
+    "mark": {"type": "circle", "tooltip": {"content": "data"}},
+    "encoding": {
+   
+        "color": {
+            "field": "Rainfall",
+            "type": "quantitative",
+            "scale": {"scheme": "reds"}
+    }
+    }
+    
+    
+   }]}
+   

@@ -1,0 +1,16 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Total rainfall in AUS from 12/2008 to 06/2017" },
+    "width": 800,
+  "height": 500,
+    "data": {
+    "url": "data/weatherAUS.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+    "x": { "field": "Rainfall", "type": "quantitative"},
+    "y": { "field": "Location", "type": "nominal" }
+    }
+   }
+
+
